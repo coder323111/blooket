@@ -1,0 +1,22 @@
+[project]
+name = "blooket-claw"
+version = "1.0.0"
+description = "Blooket Claw — automated Blooket game assistant powered by Claude AI"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+dependencies = [
+    "httpx>=0.27.0",
+    "websockets>=12.0",
+    "rich>=13.0.0",
+    "typer>=0.12.0",
+    "python-dotenv>=1.0.0",
+    "anthropic>=0.25.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
